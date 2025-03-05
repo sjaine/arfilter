@@ -35,13 +35,6 @@
   >
     <!-- we use cors proxy to avoid cross-origin problems -->
 
-    <!--
-      ⚠️⚠️⚠️
-      https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
-      You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-      ⚠️⚠️⚠️
-    -->
-
     <a-nft
       type="nft"
       url="output/bc-1"
@@ -51,12 +44,13 @@
       smoothThreshold="5"
     >
       <a-entity
-        gltf-model="right.gltf"
+        gltf-model="game_interaction_copy.gltf"
         scale="5 5 5"
         position="50 150 0"
       >
       </a-entity>
     </a-nft>
+    
     <a-entity camera></a-entity>
   </a-scene>
 </body>
