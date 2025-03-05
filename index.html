@@ -50,22 +50,21 @@
       ></a-entity>
 
       <a-entity
-        geometry="primitive: plane; height: 50; width: 50"
+        id="link-button"
+        geometry="primitive: box; depth: 0.3; height: 50; width: 50"
         material="color: red; opacity: 0.8"
         position="0 10 0"
-        text="value: Click Me!; align: center; color: white;"
+        text="value: Click Me!; align: center; color: white; width:100;"
         class="clickable"
-        event-set__click="_target: #link-opener; visible: true;"
       ></a-entity>
 
+      <script>
+        document.querySelector("#link-button").addEventListener("click", () => {
+          window.location.href = "https://enigma-project.vercel.app/second-task/completed";
+        });
+      </script>
+
     </a-nft>
-
-    <a-entity
-    id="link-opener"
-    visible="false"
-    event-set__click="_target: window.location.href='https://enigma-project.vercel.app/second-task/completed';"
-  ></a-entity>
-
 
     <a-entity camera></a-entity>
   </a-scene>
