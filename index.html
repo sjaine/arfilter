@@ -47,9 +47,26 @@
         gltf-model="right.gltf"
         scale="50 50 50"
         position="10 10 50"
-      >
-      </a-entity>
+      ></a-entity>
+
+      <a-entity
+      geometry="primitive: plane; height: 0.5; width: 1"
+      material="color: red; opacity: 0.8"
+      position="0 -1 0"
+      text="value: Click Me!; align: center; color: white;"
+      class="clickable"
+      event-set__click="_target: #link-opener; visible: true;"
+    ></a-entity>
+
+
     </a-nft>
+
+    <a-entity
+    id="link-opener"
+    visible="false"
+    event-set__click="_target: window.location.href='https://enigma-project.vercel.app/second-task/completed';"
+  ></a-entity>
+
 
     <a-entity camera></a-entity>
   </a-scene>
