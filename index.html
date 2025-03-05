@@ -20,6 +20,10 @@
     font-size: 1.25em;
     color: white;
   }
+
+  .clickable {
+    z-index: 9999;
+  }
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -35,6 +39,8 @@
   >
     <!-- we use cors proxy to avoid cross-origin problems -->
 
+    <a-entity cursor="rayOrigin: mouse"></a-entity>
+    
     <a-nft
       type="nft"
       url="output/bc-1"
@@ -53,7 +59,7 @@
         id="link-button"
         geometry="primitive: box; depth: 20; height: 50; width: 50"
         material="color: red; opacity: 0.8"
-        position="0 10 0"
+        position="0 10 -1.5"
         class="clickable"
       ></a-entity>
 
@@ -61,7 +67,12 @@
         document.querySelector("#link-button").addEventListener("click", () => {
           window.location.href = "https://enigma-project.vercel.app/second-task/completed";
         });
+      
+        document.querySelector("#link-button").addEventListener("touchstart", () => {
+          window.location.href = "https://enigma-project.vercel.app/second-task/completed";
+        });
       </script>
+      
 
     </a-nft>
 
