@@ -46,6 +46,10 @@
   >
   <canvas id="arCanvas"></canvas>
 
+  <a-assets>
+    <a-asset-item id="bbModel" src="/3d/bb.glb"></a-asset-item>
+  </a-assets>
+
     <!-- NFT 마커 -->
     <a-nft
       type="nft"
@@ -56,9 +60,7 @@
       smoothThreshold="5"
     >
       <a-entity
-        gltf-model="./3d/bb.glb"
-        scale="1 1 1"
-        position="0 0 0"
+        gltf-model="#bbModel"
       ></a-entity>
 
       <!-- 클릭 가능한 버튼 -->
