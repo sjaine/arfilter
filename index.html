@@ -86,7 +86,7 @@
         gltf-model="#xmark"
         scale="5 5 5"
         position="8 0 0"
-        rotation="0 180 0"
+        rotation="0 90 0"
       ></a-entity>
     </a-nft>
 
@@ -102,7 +102,7 @@
         gltf-model="#xmark"
         scale="5 5 5"
         position="8 0 0"
-        rotation="0 180 0"
+        rotation="0 90 0"
       ></a-entity>
     </a-nft>
 
@@ -116,18 +116,21 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const bowlMarker = document.querySelector("#bowlMarker");
       const chooseButton = document.querySelector("#chooseButton");
+      const bowlMarker = document.querySelector("#bowlMarker");
 
-      // Show button when bowl marker is detected
-      bowlMarker.addEventListener("markerFound", function () {
-        chooseButton.style.display = "block";
-      });
+      function checkMarkerVisibility() {
+        const bowlVisible = bowlMarker.object3D.visible; // Check if marker is visible
 
-      // Hide button when bowl marker is lost
-      bowlMarker.addEventListener("markerLost", function () {
-        chooseButton.style.display = "none";
-      });
+        if (bowlVisible) {
+          chooseButton.style.display = "block"; // Show button
+        } else {
+          chooseButton.style.display = "none"; // Hide button
+        }
+      }
+
+      // Run check every 500ms
+      setInterval(checkMarkerVisibility, 500);
     });
   </script>
 
