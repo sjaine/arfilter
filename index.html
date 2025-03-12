@@ -70,11 +70,31 @@
         position="8 0 0"
         rotation="-90 0 0"
       ></a-entity>
+
+      <a class="button" href="https://enigma-project.vercel.app/second-task/completed">
+        Choose
+      </a>
     </a-nft>
 
     <a-nft
       type="nft"
-      url="output/bc-1"
+      url="output/fail1"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity
+        gltf-model="#bbModel"
+        scale="3 3 3"
+        position="8 0 0"
+        rotation="-90 0 0"
+      ></a-entity>
+    </a-nft>
+
+    <a-nft
+      type="nft"
+      url="output/fail2"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
@@ -90,10 +110,6 @@
 
     <a-entity camera></a-entity>
   </a-scene>
-
-  <a class="button" href="https://enigma-project.vercel.app/second-task/completed">
-    Choose
-  </a>
 
 </body>
 </html>
