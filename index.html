@@ -35,6 +35,7 @@
       border-radius: 30px;
       background-color: white;
       z-index: 1000;
+      display: none;
     }
   </style>
 </head>
@@ -71,10 +72,6 @@
         position="8 0 0"
         rotation="-90 0 0"
       ></a-entity>
-
-      <a class="button" href="https://enigma-project.vercel.app/second-task/completed">
-        Choose
-      </a>
     </a-nft>
 
     <a-nft
@@ -87,9 +84,9 @@
     >
       <a-entity
         gltf-model="#xmark"
-        scale="3 3 3"
+        scale="5 5 5"
         position="8 0 0"
-        rotation="-90 0 0"
+        rotation="0 180 0"
       ></a-entity>
     </a-nft>
 
@@ -103,14 +100,36 @@
     >
       <a-entity
         gltf-model="#xmark"
-        scale="3 3 3"
+        scale="5 5 5"
         position="8 0 0"
-        rotation="-90 0 0"
+        rotation="0 180 0"
       ></a-entity>
     </a-nft>
 
     <a-entity camera></a-entity>
   </a-scene>
+
+  <!-- Button initially hidden -->
+  <a id="chooseButton" class="button" href="https://enigma-project.vercel.app/second-task/completed">
+    Choose
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bowlMarker = document.querySelector("#bowlMarker");
+      const chooseButton = document.querySelector("#chooseButton");
+
+      // Show button when bowl marker is detected
+      bowlMarker.addEventListener("markerFound", function () {
+        chooseButton.style.display = "block";
+      });
+
+      // Hide button when bowl marker is lost
+      bowlMarker.addEventListener("markerLost", function () {
+        chooseButton.style.display = "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
